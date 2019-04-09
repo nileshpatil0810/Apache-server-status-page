@@ -3,18 +3,21 @@ Trace more consumable process in apache
 
 How to setup http://domain.com/server-status on Apache server?
 
-Apache (Ubuntu OS)
+Apache (Ubuntu OS) :
+
 Edit file /etc/apache2/mods-available-> status.conf
+
 <Location /server-status>
-        SetHandler server-status
-        Order allow,deny
-        Allow from 122.170.1.34
+	SetHandler server-status
+	Order allow,deny
+	Allow from 122.170.1.34
 </Location>
 
 Apache (Linux-CentOS)
-Edit file /etc/httpd/conf -> httpd.conf (or use any virtualhost conf file)
 
+Edit file /etc/httpd/conf -> httpd.conf (or use any virtualhost conf file)
 LoadModule status_module modules/mod_status.so 
+
 <Location /server-status> 
     SetHandler server-status 
     Order allow,deny 
